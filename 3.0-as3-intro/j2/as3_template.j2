@@ -13,7 +13,7 @@
       "A1": {
         "class": "Application",
         "service": {
-          "class": "Service_HTTP",
+          "class": "Service_HTTPS",
           "virtualAddresses": [
             "{{ private_ip }}"
           ],
@@ -31,7 +31,7 @@
             "http"
           ],
           "members": [{
-            "servicePort": 80,
+            "servicePort": 443,
             "serverAddresses": [
               {% set comma = joiner(",") %}
               {% for mem in pool_members %}
